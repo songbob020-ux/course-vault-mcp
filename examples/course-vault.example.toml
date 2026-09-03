@@ -1,0 +1,23 @@
+schema_version = 1
+project_id = "my-authorized-course"
+title = "My Authorized Course Knowledge Vault"
+state_dir = "../course-vault-state"
+
+[collector]
+kind = "legacy_manifest"
+project_root = "/absolute/path/to/private-course-project"
+collector_root = "/absolute/path/to/private-course-project/collector"
+cache_root = "/private/tmp/course-caption-collector"
+base_url = "http://127.0.0.1:8765"
+allowed_source_hosts = ["courses.example.com"]
+max_segment_chars = 6000
+
+[vault]
+root = "/absolute/path/to/Obsidian Vault"
+lesson_subdir = "Courses/My Authorized Course"
+
+[policy]
+allow_bounded_source_segments = true
+# Required in v0.1; the local human approval gate cannot be disabled.
+require_human_review = true
+max_note_bytes = 262144

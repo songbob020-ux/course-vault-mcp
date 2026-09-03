@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "course-vault-mcp"
+version = "0.1.0"
+description = "Local-first MCP workflow for turning authorized course material into reviewed Obsidian knowledge"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Course Vault MCP contributors"}]
+dependencies = ["mcp==2.1.1"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: POSIX",
+  "Programming Language :: Python :: 3",
+  "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+[project.scripts]
+course-vault-mcp = "course_vault_mcp.server:main"
+course-vault = "course_vault_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
